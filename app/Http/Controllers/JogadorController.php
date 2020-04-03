@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Curso;
+use App\Jogador;
 
-class CursoController extends Controller
+class JogadorController extends Controller
 {
     public function listar()
     {
@@ -18,13 +19,13 @@ class CursoController extends Controller
 
         //Buscando os cursos ordenando
         //Consutar a parte da documentação que fala do QueryBuilder
-        $cursos = Curso::orderBy('nome')->get();
+        $jogadores = Jogador::orderBy('nome')->get();
 
-        return view('admin.cursos.listar', compact('cursos'));
+        return view('admin.jogadores.listar', compact('jogadores'));
     }
 
     public function adicionar()
     {
-        return view('admin.cursos.form');
+        return view('admin.jogadores.form');
     }
 }

@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Curso extends Model
+class Jogador extends Model
 {
     //Caso não siga o nome padrão, tem que acrescentar esse atributo
     //para indicar o nome da tabela a que o modelo irá se conectar
     //protected $table = 'nome_da_tabela';
+    protected $table = 'jogadores';
 
     //Caso o nome da chave primária da sua tabela não seja id
     //tem que colocar o atributo abaixo informando o nome da chave

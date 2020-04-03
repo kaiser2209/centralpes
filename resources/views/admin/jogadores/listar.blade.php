@@ -15,9 +15,12 @@
 
 <table class="table table-hover">
     @forelse ($jogadores as $jogador)
-        <tr>
-            <td>{{$jogador->nome}}</td>
-            <td class="d-flex justify-content-end">
+        <tr class="d-flex">
+            <td class="flex-shrink-1">{!!$pos[$jogador->posicao - 1]!!}</td>
+            <td class="flex-shrink-1">{{$jogador->overall}}</td>
+            <td class="flex-shrink-1" style="vertical-align: top;"><img style="height: 24px" src="{{asset('img/' . $jogador->bandeira)}}"></td>
+            <td class="flex-grow-1">{{$jogador->nome}}</td>
+            <td class="justify-content-end">
                 <span class="btn btn-info btn-sm" title="Editar">
                     <i class="fas fa-edit fa-fw"></i>
                 </span>
@@ -28,7 +31,7 @@
         </tr>
     @empty
         <tr>
-            <td><img src="{{ asset('img/arsenal.svg') }}"></td>
+            {{-- <td><img src="{{ asset('img/arsenal.svg') }}"></td> --}}
         </tr>
     @endforelse
 

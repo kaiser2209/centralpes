@@ -1,0 +1,21 @@
+.squad-table-pos {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+.squad-table-Forward {
+    background: rgba(239, 30, 30, 0.3);
+}
+
+.squad-table-Defender {
+    background: rgba(0, 171, 210, 0.3);
+}
+
+.squad-table-Midfielder {
+    background: rgba(136, 201, 0, 0.3);
+}
+
+.squad-table-Goalkeeper {
+    background: rgba(254, 185, 7, 0.3);
+}

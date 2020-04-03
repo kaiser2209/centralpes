@@ -19,9 +19,14 @@ class JogadorController extends Controller
 
         //Buscando os cursos ordenando
         //Consutar a parte da documentação que fala do QueryBuilder
-        $jogadores = Jogador::orderBy('nome')->get();
+        $jogadores = DB::table('jogadores')
+            ->join('paises', 'jogadores.nacionalidade', '=', 'paises.id')
+            ->select('jogadores.*', 'paises.bandeira')
+            ->get();
+        $pos = $this->pos;
 
-        return view('admin.jogadores.listar', compact('jogadores'));
+
+        return view('admin.jogadores.listar', compact('jogadores', 'pos'));
     }
 
     public function adicionar()
